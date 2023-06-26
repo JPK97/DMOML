@@ -1,0 +1,201 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<ExpFiles>
+
+	<!-- ****************************************************************************************** -->
+	<!-- Relevant Flags -->
+	<flags>
+		<!-- Use a mask to calculate accuracy scores -->
+		<!-- In case no mask files are provided, the flag will be turned to False -->
+		<MASK>True</MASK>
+
+		<!-- Create a new set of FV, requires MASK to be True -->
+		<!-- If False and a cube from the database doesn't have a matching FV file, a new one will be created-->
+		<CREATE_FV>True</CREATE_FV>
+
+		<!-- Train a new SVM, requires MASK to be True -->
+		<!-- If False and there is no SVM or it's invalid, an error will be raised -->
+		<TRAIN_SVM>False</TRAIN_SVM>
+
+		<!-- Use the halving algorithm to determine the best gamma and C combinations (for the 1st cube) -->
+		<!-- If False, they will be determined by a grid search -->
+		<!-- If you want to give gamma or C values, set the number parameters to 0 or 1 -->
+		<HALV>True</HALV>
+
+		<!-- Plot the classic/halv gridsearch raster -->
+		<!-- Requires the algorithm to train a SVM and actually do a grid search -->
+		<!-- 'iter' notes for halfing grid search are not included -->
+		<Plot_GS>True</Plot_GS>
+
+		<!-- Plot the SVM prediction distribution of the features -->
+		<!-- Assuming a normal distribution of the features vectors -->
+		<!-- Requires the SVM to be trained (TRAIN_SVM == True) -->
+		<Grid_SVM>False</Grid_SVM>
+
+		<!-- Create fits cubes to compare the results easier with the input data -->
+		<create_fits>True</create_fits>
+
+		<!-- Plots to analyze the feature distribution -->
+		<!-- If MASK is True, also plots input and True/False prediction distribution -->
+		<CHECK_FV>False</CHECK_FV>
+
+		<!-- Plots to analyze the 2D feature distribution -->
+		<!-- If MASK is True, also plots input and True/False prediction distribution -->
+		<CHECK_FV2D>False</CHECK_FV2D>
+
+		<!-- Plots to analyze the feature importance -->
+		<!-- Requires MASK to be True -->
+		<CHECK_FI>True</CHECK_FI>
+
+		<!-- Plots to display the confusion matrix -->
+		<!-- Requires MASK to be True -->
+		<Plot_CM>False</Plot_CM>
+
+		<!-- Freate cubes to analyze the features of the FV -->
+		<FV_CUBES>True</FV_CUBES>
+
+		<!-- Fix the random seed -->
+		<FixRandom>True</FixRandom>
+
+		<!-- Calculate database statistic, requires MASK to be True -->
+		<DatabaseStatistic>True</DatabaseStatistic>
+
+		<!-- Generate simple score vs. (metric) parameter plots, requires MASK to be True -->
+		<DatabaseAutomatic>True</DatabaseAutomatic>
+
+		<!-- Generate more complex score vs. main parameter plots containing several subdata sets -->
+		<!-- Requires manual input and MASK to be True -->
+		<DatabaseManual>False</DatabaseManual>
+
+		<!-- Remove all unneccesary files/directories -->
+		<ProductionRun>False</ProductionRun>
+
+		<!-- Generates the plots in 90% Din A4 size, ergo maximal 18.9*26.73 cm or 7.47*10.53 in -->
+		<ThesisMode>False</ThesisMode>
+	</flags>
+
+
+	<!-- ****************************************************************************************** -->
+	<!-- Name of the Local Machine -->
+	<namelocal>LocalName</namelocal>
+
+
+	<!-- ****************************************************************************************** -->
+	<!-- Give Relevant Paths Servers -->
+	<pathsserver>
+		<!-- Root in wich all files/directories will be stored -->
+		<SavePath>/SavePath/</SavePath>
+
+		<!-- Directory from which most files will be read out -->
+		<ReadPath>/ReadPath/</ReadPath>
+
+		<!-- Directory to the database(s) -->
+		<DatabasePath>/DatabasePath/</DatabasePath>
+
+		<!-- Directory containing the FV files in case one wants to read them out -->
+		<Read_FV_Path>/FVPath/</Read_FV_Path>
+
+		<!-- Directory containing the trained SVM -->
+		<Read_SVM_Path>/SVMPath/</Read_SVM_Path>
+	</pathsserver>
+
+	<!-- Give Relevant Paths Local Machine -->
+	<pathslocal>
+		<!-- Root in wich all files/directories will be stored -->
+		<SavePath>/SavePath/</SavePath>
+
+		<!-- Directory from which most files will be read out -->
+		<ReadPath>/ReadPath/</ReadPath>
+
+		<!-- Directory to the database(s) -->
+		<DatabasePath>/DatabasePath/</DatabasePath>
+
+		<!-- Directory containing the FV files in case one wants to read them out -->
+		<Read_FV_Path>/FVPath/</Read_FV_Path>
+
+		<!-- Directory containing the trained SVM -->
+		<Read_SVM_Path>/SVMPath/</Read_SVM_Path>
+	</pathslocal>
+
+
+	<!-- ****************************************************************************************** -->
+	<!-- Give Relevant Files on the Servers -->
+	<filesserver>
+		<!-- File of the database -->
+		<database_file>Database.csv</database_file>
+
+		<!-- Name of the support vector machine, in case it's read in -->
+		<SVM_file>SVM.pkl</SVM_file>
+	</filesserver>
+
+	<!-- Give Relevant Files on a Local Machine -->
+	<fileslocal>
+		<!-- File of the database -->
+		<database_file>Database.csv</database_file>
+
+		<!-- Name of the support vector machine, in case it's read in -->
+		<SVM_file>SVM.pkl</SVM_file>
+	</fileslocal>
+
+
+	<!-- ****************************************************************************************** -->
+	<!-- Give Relevant Parameters -->
+	<parameters>
+		<!-- Number of used processes for parallelization, max 90% of computer cores -->
+		<npro>5</npro>
+
+		<!-- Minimal subcube spartial extent in times of the beam size -->
+		<SigmaSC>2</SigmaSC>
+
+		<!-- Minimal subcube velocity extent in km/s -->
+		<VelocitySC>5</VelocitySC>
+
+		<!-- The used kernel, rbg (recommended) or linear -->
+		<kernel>rbf</kernel>
+
+		<!-- Sigma level to remove the noise, set it to None to ignore the sigma level -->
+		<SigmaLevel>None</SigmaLevel>
+
+		<!-- Fraction of training data of each cube -->
+		<train_size>0.3</train_size>
+
+		<!-- Grid search scoring method -->
+		<!-- Valid are all possible sklearn metrics -->
+		<!-- and TPR (for true positive rate) or TNR (for true negative rate) -->
+		<grid_scoring>TNR</grid_scoring>
+
+		<!-- Spacing of gamma grid -->
+		<!-- Valid are linear and log -->
+		<gammaspacing>log</gammaspacing>
+
+		<!-- Number of gamma points -->
+		<gamman>51</gamman>
+
+		<!-- Minimal gamma value -->
+		<gammamin>1e-5</gammamin>
+		<!--<gammamin>9.01</gammamin>-->
+
+		<!-- Maximal gamma value -->
+		<gammamax>1e-1</gammamax>
+		<!--<gammamax>9.01</gammamax>-->
+
+		<!-- Spacing of c grid -->
+		<!-- Valid are linear and log -->
+		<cspacing>log</cspacing>
+
+		<!-- Number of c points -->
+		<cn>51</cn>
+
+		<!-- Minimal c value -->
+		<cmin>1e-1</cmin>
+
+		<!-- Maximal c value -->
+		<cmax>1e3</cmax>
+
+		<!-- Minimal percentage of a feature included in the feature distribution plots -->
+		<fdmp>0.95</fdmp>
+
+		<!-- Permutation importance scoring score -->
+		<!-- Valid scores are same as 'grid_scoring' -->
+		<fi_scoring>balanced_accuracy</fi_scoring>
+	</parameters>
+</ExpFiles>
