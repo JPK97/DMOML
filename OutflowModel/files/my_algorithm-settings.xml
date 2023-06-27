@@ -1,0 +1,40 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<FitControl>
+    <!-- settings for fit process -->
+
+
+    <!-- set number of used algorithms -->
+    <NumberOfFitAlgorithms>1</NumberOfFitAlgorithms>
+
+
+    <!-- define settings for 2nd algorithm -->
+    <algorithm>
+        <FitAlgorithm>Levenberg-Marquardt</FitAlgorithm>
+
+
+        <!-- define value of the variation (used for the calculation of the gradient (first derivative of chi^2 function)) in percent/100 -->
+        <VariationValue>1.e-3</VariationValue>
+
+
+        <!-- set max. number of iterations -->
+        <number_iterations>10</number_iterations>
+
+
+        <!-- set max. number of processors -->
+        <NumberProcessors>6</NumberProcessors>
+
+
+        <!-- settings for chi^2 -->
+        <limit_of_chi2>1e-6</limit_of_chi2>
+        <RenormalizedChi2>yes</RenormalizedChi2>
+        <DeterminationChi2>default</DeterminationChi2>
+        <SaveChi2>yes</SaveChi2>
+
+
+        <!-- set plot options -->
+        <PlotAxisX>Rest Frequency [MHz]</PlotAxisX>
+        <PlotAxisY>T_mb [K]</PlotAxisY>
+        <PlotIteration>no</PlotIteration>
+    </algorithm>
+</FitControl>
+
