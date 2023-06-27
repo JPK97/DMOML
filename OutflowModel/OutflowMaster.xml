@@ -1,0 +1,240 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<ExpFiles>
+
+	<!-- ****************************************************************************************** -->
+	<!-- Relevant Flags -->
+	<flags>
+		<!-- Calculate model; if not one might need to modify ExistingCalculation -->
+		<CalculateModel>True</CalculateModel>
+		
+		<!-- Apply XCLASS fit, requires CalculateModel to be True -->
+		<XCLASS>False</XCLASS>
+		
+		<!-- Apply MapFit fit, requires CalculateModel to be True -->
+		<MapFit>True</MapFit>
+		
+		<!-- Apply gaussian filter -->
+		<SmoothGaussian>True</SmoothGaussian>
+		
+		<!-- Add simulated cloud -->
+		<Cloud>True</Cloud>
+		
+		<!-- Add white noise -->
+		<WhiteNoise>True</WhiteNoise>
+		
+		<!-- Update data base, requires CalculateModel and MapFit to be True -->
+		<UpdateDataBase>False</UpdateDataBase>
+		
+		<!-- Create plots -->
+		<Plot>True</Plot>
+		
+		<!-- Upload plots, requires Plot to be True -->
+		<UploadPlot>False</UploadPlot>
+		
+		<!-- Print XCLASS output, does not work, yet -->
+		<printXCLASS>False</printXCLASS>
+		
+		<!-- Print MapFit output, does not work, yet -->
+		<printMapFit>False</printMapFit>
+		
+		<!-- Print thumbspage output, does not work, yet -->
+		<printThumbsPage>False</printThumbsPage>
+		
+		<!-- Print out warnings -->
+		<printWarnings>False</printWarnings>
+		
+		<!-- Production run -> remove all output but model and mask -->
+		<ProductionRun>False</ProductionRun>
+		
+		<!-- Debug support -->
+		<Debug>False</Debug>
+		
+		<!-- Fix the random number generator -->
+		<FixRandom>False</FixRandom>
+	</flags>
+
+
+	<!-- ****************************************************************************************** -->
+	<!-- Name of the Local Machine -->
+	<namelocal>LAPTOP-T08B3QOH</namelocal>
+
+
+	<!-- ****************************************************************************************** -->
+	<!-- Give Relevant Paths Servers -->
+	<pathsserver>
+		<!-- Root in wich all files/directories will be stored -->
+		<SavePath>/SavePath/</SavePath>
+		
+		<!-- Directory from which most files will be read out -->
+		<ReadPath>/ReadPath/</ReadPath>
+
+		<!-- Directory to the database(s) -->
+		<DatabasePath>/DatabasePath/</DatabasePath>
+
+		<!-- Directory containing the simulated cloud -->
+		<CloudPath>/CloudPath/</CloudPath>
+
+		<!-- Directory from which an already existing dataset will be read in -->
+		<ExistingCalculation>/ExistingCalculationPath/</ExistingCalculation>
+
+		<!-- Root of the thumbspages, the actual directory is generated with the database file -->
+		<LocalThumbsPagePath>/ThumbspagePath/</LocalThumbsPagePath>
+		
+		<!-- Directory containing the thumbspage skript -->
+		<ThumbsPageScriptPath>/ThumbspageScript/</ThumbsPageScriptPath>
+
+		<!-- Root of the upload directories, the actual directory is generated with the database file -->
+		<UploadPath>/UploadPath/</UploadPath>
+	</pathsserver>
+
+	<!-- Give Relevant Paths Local Machine -->
+	<pathslocal>
+		<!-- Root in wich all files/directories will be stored -->
+		<SavePath>/SavePath/</SavePath>
+
+		<!-- Directory from which most files will be read out -->
+		<ReadPath>/ReadPath/</ReadPath>
+
+		<!-- Directory to the database(s) -->
+		<DatabasePath>/DatabasePath/</DatabasePath>
+
+		<!-- Directory containing the simulated cloud -->
+		<CloudPath>/CloudPath/</CloudPath>
+
+		<!-- Directory from which an already existing dataset will be read in -->
+		<ExistingCalculation>/ExistingCalculationPath/</ExistingCalculation>
+
+		<!-- Root of the thumbspages, the actual directory is generated with the database file -->
+		<LocalThumbsPagePath>/ThumbspagePath/</LocalThumbsPagePath>
+
+		<!-- Directory containing the thumbspage skript -->
+		<ThumbsPageScriptPath>/ThumbspageScript/</ThumbsPageScriptPath>
+
+		<!-- Root of the upload directories, the actual directory is generated with the database file -->
+		<UploadPath>/UploadPath/</UploadPath>
+	</pathslocal>
+
+
+	<!-- ****************************************************************************************** -->
+	<!-- Give Relevant Files on the Servers -->
+	<filesserver>
+		<!-- File containing the outflow parameters -->
+		<data_file>Data.dat</data_file>
+
+		<!-- File for the outflow database, name is relevant for uploading the pictures -->
+		<database_file>Database.csv</database_file>
+
+		<!-- The comparison cube -->
+		<cube_file>dummy_13CO.fits</cube_file>
+
+		<!-- The xml file to specify the observations -->
+		<xml_file>my_observation__map.xml</xml_file>
+
+		<!-- The simulated cloud -->
+		<cloud_file>CloudCube.fits</cloud_file>
+		
+		<!-- Name of the thumbs page script -->
+		<ThumbsPageScript>thumbspage.py</ThumbsPageScript>
+	</filesserver>
+	
+	<!-- Give Relevant Files on a Local Machine -->
+	<fileslocal>
+		<!-- File containing the outflow parameters -->
+		<data_file>Data.dat</data_file>
+
+		<!-- File for the outflow database, name is relevant for uploading the pictures -->
+		<database_file>Database.csv</database_file>
+
+		<!-- The comparison cube -->
+		<cube_file>dummy_13CO.fits</cube_file>
+
+		<!-- The xml file to specify the observations -->
+		<xml_file>my_observation__map.xml</xml_file>
+
+		<!-- The simulated cloud -->
+		<cloud_file>CloudCube.fits</cloud_file>
+
+		<!-- Name of the thumbs page script -->
+		<ThumbsPageScript>thumbspage.py</ThumbsPageScript>
+	</fileslocal>
+
+
+	<!-- ****************************************************************************************** -->
+	<!-- Give Relevant Parameters -->
+	<parameters>
+		<!-- Number of used processes for parallelization, max 90% of computer cores -->
+		<npro>40</npro>
+		
+		<!-- Distance to source in pc -->
+		<Distance>6e3</Distance> 
+		
+		<!-- Maximal telescope resolution in deg -->
+		<MaxResolution>1e-05</MaxResolution>
+		
+		<!-- Intensity unit for XCLASS -->
+		<Bunit>K</Bunit> 
+		
+		<!-- The used molecule -->
+		<Molecule>C-13-O;v=0;</Molecule> 
+		
+		<!-- Restfrequency in MHz -->
+		<RestFreq>2.203986842000E+5</RestFreq> 
+		
+		<!-- Maximal number of cells in x and y direction -->
+		<MaxXYSteps>151</MaxXYSteps> 
+		
+		<!-- Number of cells in z direction -->
+		<ZSteps>101</ZSteps> 
+		
+		<!-- Minimal frequency extend in MHz -->
+		<FreqRange>10</FreqRange> 
+		
+		<!-- Maximal frequency step size in MHz -->
+		<FrequencyStep>0.1</FrequencyStep> 
+		
+		<!-- Minimal number of frequency steps -->
+		<MinFSteps>101</MinFSteps> 
+		
+		<!-- Source size, constant -->
+		<ssComp>0.1</ssComp>
+		
+		<!-- Line width, constant -->
+		<vWidthComp>3.0</vWidthComp>
+		
+		<!-- Background density in cm-3 -->
+		<nbackground>2.5e-6</nbackground>
+
+		<!-- Background temperature in K -->
+		<Tbackground>0.1</Tbackground> 
+		
+		<!-- Major beam axis in deg, also used for the smoothing -->
+		<BMAJ>1e-4</BMAJ>
+		
+		<!-- Minor beam axis in deg, also used for the smoothing -->
+		<BMIN>1e-4</BMIN>
+		
+		<!-- Beam orientation in deg, also used for the smoothing -->
+		<BPA>0</BPA>
+
+		<!-- Cloud velocity is random uniform distributed -->
+		<!-- Minimal cloud velocity in km/s -->
+		<MinCloudV>8</MinCloudV>
+		
+		<!-- Maximal cloud velocity in km/s -->
+		<MaxCloudV>10</MaxCloudV>
+
+		<!-- Maximal cloud intensity is random normal distributed, but bigger than 1 K -->
+		<!-- Mean cloud max intensity in K -->
+		<CloudLoc>6</CloudLoc>
+
+		<!-- Standard deviation of cloud max intensity in K -->
+		<CloudScale>3</CloudScale>
+
+		<!-- White noise intensity is random normal distributed -->
+		<!-- Mean white noise intensity in K -->
+		<WNLoc>0.5</WNLoc>
+
+		<!-- Standard deviation of white noise in K -->
+		<WNScale>0.4</WNScale>
+	</parameters>
+</ExpFiles>
