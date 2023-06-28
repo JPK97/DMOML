@@ -31,7 +31,7 @@ def Feature_Extractor(CalcParameters, FILE_CUBE, FILE_MASK="NoMask"):
         data = sc.read(FILE_CUBE).to("K").hdu.data
 
         ## Check if all entries are nan or inf
-        if not np.isnan(data).all() and np.isinf(data).all():
+        if not np.isnan(data).all() or np.isinf(data).all():
 
             ## Create original copy of data
             data_o = np.copy(data)
@@ -375,7 +375,7 @@ def create_feature_vector(CalcParameters, data_set=None):
             inval_cubes = np.append(inval_cubes, i_set)
 
     ## Remove all invalid data sets, if neccessary
-    if not inval_cubes:
+    if list(inval_cubes):
         data_pd = data_pd.drop(index=inval_cubes)
 
     ## Update the database
