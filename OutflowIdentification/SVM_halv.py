@@ -2814,9 +2814,9 @@ def ApplySupportVectorMachine(CalcParameters, mode="full"):
             for feature_name, cmin, cmean, cmax in zip(feature_names, cmins, cmeans, cmaxes):
                         
                 ## Saving violin mean and extenses to data base (I know, it ain't whiskers anymore, but it works...)
-                data_pd_fi.loc[i_set, "%s" %(feature_name)] = cmean
-                data_pd_fi.loc[i_set, "%s lower whiskers length" %(feature_name)] = abs(cmean-cmin)
-                data_pd_fi.loc[i_set, "%s upper whiskers length" %(feature_name)] = abs(cmax-cmean)
+                data_pd_fi.loc[df_index, "%s" %(feature_name)] = cmean
+                data_pd_fi.loc[df_index, "%s lower whiskers length" %(feature_name)] = abs(cmean-cmin)
+                data_pd_fi.loc[df_index, "%s upper whiskers length" %(feature_name)] = abs(cmax-cmean)
                         
             ## Save images
             if mode == "full":
