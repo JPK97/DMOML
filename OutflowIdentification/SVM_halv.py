@@ -1357,7 +1357,7 @@ def ApplySupportVectorMachine(CalcParameters, mode="full"):
 
 
     ## Loop over all data sets
-    for i_set, (Parent_Dir, Cube_Name) in enumerate(zip(Parent_Dirs, Cube_Names)):
+    for i_set, (df_index, Parent_Dir, Cube_Name) in enumerate(zip(data_pd.index, Parent_Dirs, Cube_Names)):
 
         tiis = ti.time()
 
@@ -1489,10 +1489,10 @@ def ApplySupportVectorMachine(CalcParameters, mode="full"):
             score_b = None
 
         ## Saving scores to data base
-        data_pd.loc[i_set, "Outflow score"] = score_o
-        data_pd.loc[i_set, "Non-outflow score"] = score_n
-        data_pd.loc[i_set, "Overall score"] = score_c
-        data_pd.loc[i_set, "Balanced score"] = score_b
+        data_pd.loc[df_index, "Outflow score"] = score_o
+        data_pd.loc[df_index, "Non-outflow score"] = score_n
+        data_pd.loc[df_index, "Overall score"] = score_c
+        data_pd.loc[df_index, "Balanced score"] = score_b
 
         ## Save the updated database
         if mode == "full" and Mask_Flag ==  True:
