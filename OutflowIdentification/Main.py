@@ -150,7 +150,6 @@ def Call_Main(MasterFile):
 
     ## Name all other files
     MyParameters['NameDir'] = "%s_%s/" %(currenttime, MyParameters["database_file"][:-4])
-    MyParameters['OutputPath'] = MyParameters['SavePath'] + "Output/"
     MyParameters['OutputPath'] = MyParameters['SavePath']
     MyParameters['DatePath'] = MyParameters['OutputPath'] + MyParameters['NameDir']
     MyParameters['FVPath'] = MyParameters['DatePath'] + "FV/"
