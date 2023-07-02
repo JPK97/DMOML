@@ -200,7 +200,7 @@ def PlotDatabase(database, yaxis=None, xerr=None, yerr=None, split_set=False, Th
 
     ## Save figure if path and name are provided
     if savename != None and savepath != None:
-        plt.savefig("%s%s" %(savepath, savename), dpi='figure', format="pdf", metadata=None, bbox_inches="tight", 
+        plt.savefig("%s%s" %(savepath, savename.replace("/", "-")), dpi='figure', format="pdf", metadata=None, bbox_inches="tight", 
                     pad_inches=0.1, backend=None)
         plt.close()
 
