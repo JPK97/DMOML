@@ -1,0 +1,12 @@
+,Model name,Theta [deg],Phi [deg],v [km/s],n [cm-3],T [K],alpha,dmin [au],sigmaof,ThataMax [deg],epsilon,gamma,M1,beta,r0 [au],z0 [au],Label
+Sample 0,Cabrit,0.0,0,50,0.25,50,-1,20000,5,25,1,1.4,20,-4,10000,10000000,Train dataset reduced
+Sample 1,Cabrit,25.841932763167126,0,50,0.25,50,-1,20000,5,25,1,1.4,20,-4,10000,10000000,Train dataset reduced
+Sample 2,Cabrit,36.86989764584401,0,50,0.25,50,-1,20000,5,25,1,1.4,20,-4,10000,10000000,Train dataset reduced
+Sample 3,Cabrit,45.5729959991943,0,50,0.25,50,-1,20000,5,25,1,1.4,20,-4,10000,10000000,Train dataset reduced
+Sample 4,Cabrit,53.13010235415599,0,50,0.25,50,-1,20000,5,25,1,1.4,20,-4,10000,10000000,Train dataset reduced
+Sample 5,Cabrit,60.00000000000001,0,50,0.25,50,-1,20000,5,25,1,1.4,20,-4,10000,10000000,Train dataset reduced
+Sample 6,Cabrit,66.42182152179818,0,50,0.25,50,-1,20000,5,25,1,1.4,20,-4,10000,10000000,Train dataset reduced
+Sample 7,Cabrit,72.54239687627792,0,50,0.25,50,-1,20000,5,25,1,1.4,20,-4,10000,10000000,Train dataset reduced
+Sample 8,Cabrit,78.46304096718453,0,50,0.25,50,-1,20000,5,25,1,1.4,20,-4,10000,10000000,Train dataset reduced
+Sample 9,Cabrit,84.26082952273322,0,50,0.25,50,-1,20000,5,25,1,1.4,20,-4,10000,10000000,Train dataset reduced
+Sample 10,Cabrit,90.0,0,50,0.25,50,-1,20000,5,25,1,1.4,20,-4,10000,10000000,Train dataset reduced
