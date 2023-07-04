@@ -21,9 +21,9 @@
 		<!-- If you want to give gamma or C values, set the number parameters to 0 or 1 -->
 		<HALV>True</HALV>
 
-		<!-- Plot the classic/halv gridsearch raster -->
-		<!-- Requires the algorithm to train a SVM and actually do a grid search -->
-		<!-- 'iter' notes for halfing grid search are not included -->
+		<!-- Plot the classic/halv grid-search raster -->
+		<!-- Requires the algorithm to train an SVM and do a grid search -->
+		<!-- 'iter' notes for halving grid search are not included -->
 		<Plot_GS>True</Plot_GS>
 
 		<!-- Plot the SVM prediction distribution of the features -->
@@ -34,7 +34,7 @@
 		<!-- Create fits cubes to compare the results easier with the input data -->
 		<create_fits>True</create_fits>
 
-		<!-- Plots to analyze the feature distribution -->
+		<!-- Plots to analyse the feature distribution -->
 		<!-- If MASK is True, also plots input and True/False prediction distribution -->
 		<CHECK_FV>False</CHECK_FV>
 
@@ -42,7 +42,7 @@
 		<!-- If MASK is True, also plots input and True/False prediction distribution -->
 		<CHECK_FV2D>False</CHECK_FV2D>
 
-		<!-- Plots to analyze the feature importance -->
+		<!-- Plots to analyse the feature importance -->
 		<!-- Requires MASK to be True -->
 		<CHECK_FI>True</CHECK_FI>
 
@@ -50,7 +50,7 @@
 		<!-- Requires MASK to be True -->
 		<Plot_CM>False</Plot_CM>
 
-		<!-- Freate cubes to analyze the features of the FV -->
+		<!-- Freate cubes to analyse the features of the FV -->
 		<FV_CUBES>True</FV_CUBES>
 
 		<!-- Fix the random seed -->
@@ -59,14 +59,14 @@
 		<!-- Calculate database statistic, requires MASK to be True -->
 		<DatabaseStatistic>True</DatabaseStatistic>
 
-		<!-- Generate simple score vs. (metric) parameter plots, requires MASK to be True -->
+		<!-- Generate simple score vs (metric) parameter plots, requires MASK to be True -->
 		<DatabaseAutomatic>True</DatabaseAutomatic>
 
-		<!-- Generate more complex score vs. main parameter plots containing several subdata sets -->
+		<!-- Generate more complex score vs main parameter plots containing several sub-datasets -->
 		<!-- Requires manual input and MASK to be True -->
 		<DatabaseManual>False</DatabaseManual>
 
-		<!-- Remove all unneccesary files/directories -->
+		<!-- Remove all unnecessary files/directories -->
 		<ProductionRun>False</ProductionRun>
 
 		<!-- Generates the plots in 90% Din A4 size, ergo maximal 18.9*26.73 cm or 7.47*10.53 in -->
@@ -140,10 +140,10 @@
 	<!-- ****************************************************************************************** -->
 	<!-- Give Relevant Parameters -->
 	<parameters>
-		<!-- Number of used processes for parallelization, max 90% of computer cores -->
+		<!-- Number of used processes for parallelisation, max 90% of computer cores -->
 		<npro>5</npro>
 
-		<!-- Minimal subcube spartial extent in times of the beam size -->
+		<!-- Minimal subcube spatial extent in times of the beam size -->
 		<SigmaSC>2</SigmaSC>
 
 		<!-- Minimal subcube velocity extent in km/s -->
@@ -195,7 +195,7 @@
 		<fdmp>0.95</fdmp>
 
 		<!-- Permutation importance scoring score -->
-		<!-- Valid scores are same as 'grid_scoring' -->
+		<!-- Valid scores are the same as 'grid_scoring' -->
 		<fi_scoring>balanced_accuracy</fi_scoring>
 	</parameters>
 </ExpFiles>
